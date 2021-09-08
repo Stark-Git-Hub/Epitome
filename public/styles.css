@@ -1,0 +1,263 @@
+body{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#nav{
+    position: sticky;
+    z-index: 1;
+    top:0;
+    left:0;
+    overflow-x: hidden;
+    padding: 20px;
+    text-transform: uppercase;
+    border-right: 2px solid black;
+    height: 93.75vh;
+    grid-column: 1/2;
+    background-color: #2E4053;
+    color: white;
+}
+
+#nav h1{
+    text-align: center;
+}
+
+#nav li{
+    line-height: 100px;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+}
+
+#nav ul{
+    list-style-type: none;
+    padding: 20px 0;
+}
+
+#nav a{
+    text-decoration: none;
+    color: white;
+}
+
+#nav li:hover{
+    background-color: #D5DBDB;
+    color: #2E4053;
+    cursor: pointer;
+}
+
+#nav li:hover a{
+    color: inherit;
+}
+
+.title{
+    height: 200px;
+    border-bottom: 2px solid black;
+    text-align: center;
+    display: flexbox;
+    justify-content: center;
+    font-family: 'Ubuntu';
+    font-size: 20px;
+}
+
+#main{
+    grid-column: 2/3;
+    padding: 20px 40px;
+    color: black;
+    background-color: #D5DBDB;
+}
+
+#New{
+    float: right;
+    padding: 10px 20px;
+    color: #2E4053;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#New:hover{
+    background-color: #2E4053;
+    color: #D5DBDB;
+    cursor: pointer;
+}
+
+.dropbtn {
+    color: #2E4053;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 140px;
+    margin-bottom: 0px;
+}
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: #2E4053;
+    background-color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    width: 100px;
+    font-size: 18px;
+    border-radius: 2px;
+}
+  
+.dropdown-content a:hover {
+    background-color: #435263;
+    color: #D5DBDB;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+.dropdown:hover .dropbtn {
+    background-color: #2E4053;
+    color: #D5DBDB;
+}
+
+#searchbar{
+    width: 85%;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.note{
+    display: block;
+    width: 40%;
+    height: fit-content;
+    border-radius: 5px;
+    background-color: #2E4053;
+    color: #D5DBDB;
+    padding: 20px 40px; 
+    font-size: 20px;
+}
+
+.note button{
+    margin-top: 20px;
+    background: #D5DBDB;
+    color: #2E4053;
+    padding: 8px 15px;
+    border: 0;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.note button:hover{
+    background-color: #b8bfc5;
+}
+
+#ce-note{
+    margin: 21px auto;      
+}
+
+#ce-note form{
+    max-width: 400px;
+    margin: auto;
+}
+
+#ce-note input,
+#ce-note textarea{
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#ce-note select{
+    display: block;
+    margin: 10px 0;
+    width: 395px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#ce-note label{
+    display: block;
+    margin-top: 24px;
+}
+
+textarea{
+    height: 120px;
+    resize: none;
+}
+  
+#ce-note button{
+    margin-left: 120px;    
+    width: 150px;
+}
+
+.note-link{
+    background-color: #5D6D7E;
+    border-radius: 5px;
+    padding: 1px 10px 1px 10px;
+    margin-top: 10px;
+    color: white;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    justify-content: space-between;
+}
+
+.note-link:hover{
+    background-color: #2E4053;
+}
+
+a{
+    text-decoration: none;
+}
+
+#view-note{
+    margin: 12% auto;
+    z-index: 2;
+}
+
+#view-note button{
+    width: 100px;
+}
+
+#view-note .content{
+    text-align: justify;
+}
+
+.delete{
+    background-color: #D5DBDB;
+    margin-top: -65px;
+    float: right;
+    border-radius: 8px;
+    padding : 8px;
+}
+
+.delete:hover{
+    background-color: #b8bfc5;
+    cursor: pointer;
+}
+
+#sbutton{
+    float: right;
+    background: #2E4053;
+    padding: 6px 15px;
+    width: 95px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#sbutton:hover{
+    background: #3e4a57;
+}

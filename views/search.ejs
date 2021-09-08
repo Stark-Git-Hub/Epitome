@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div id="main">
+        <h2>Search for the title</h2>
+        <form action="/notes/search-note" method="GET" style="margin-bottom: 10px;">
+            <input id="searchbar" name="search" type="text" placeholder="Enter the title">
+            <button type="submit" id="sbutton">
+                <img src="/mag-glass.svg" alt="">
+            </button>
+        </form>
+    </div>
+</body>
+</html>

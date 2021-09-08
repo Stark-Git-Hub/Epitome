@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div id="main">
+        <h1>Notes</h1>
+        <div class="dropdown">
+            <button class="dropbtn">Sort By</button>
+            <div class="dropdown-content">
+              <a href="/notes/category">Category</a>
+              <a href="/notes/title">Title</a>
+            </div>
+        </div>
+        <a href="/notes/create"><button id="New">+ New Note</button></a>
+
+        <% if(notes.length>0) { %>
+            <% notes.forEach(note => { %>
+            <a href="/notes/<%=note._id%>">
+                <div class="note-link">
+                    <div><h2><%= note.title %></h2></div>
+                    <div><p><%= note.category %></p></div>
+                    <div><p><%= note.createdAt.toDateString() %></p></div>
+                </div>
+            </a>
+            <% }) %>
+        <% } else { %>
+            <p>There are no notes to display.</p>
+        <% } %>
+
+    </div>
+</body>
+</html>

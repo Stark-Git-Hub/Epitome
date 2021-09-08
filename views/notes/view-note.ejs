@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <div id="main">
+        <div id = "view-note"  class="note">
+            <h2><%= note.title%></h2>
+            <p style="font-size: 15px; margin-top: -15px;"><%= note.createdAt.toDateString() %></p>
+            <a class="delete" data-doc="<%= note._id %>">
+                <img src="/trashcan.svg" alt="Delete icon">
+            </a><hr>
+            <div class="content">
+                <p><%= note.content%></p>
+            </div>
+            <a href="/"><button>Back</button></a>
+            <a href="/notes/edit/<%=note._id%>"><button style="float: right;">Edit</button></a>
+        </div>
+    </div>
+
+
+
+    <script>
+        const trashcan = document.querySelector('a.delete');
+
+        trashcan.addEventListener('click', (event) =>{
+            const endpoint = `/notes/${trashcan.dataset.doc}`;
+
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then((response) => response.json()) //The response is the json redirect we send from app.js
+            .then((data) => window.location.href = data.redirect)
+            .catch((err) => console.log(err));
+        });
+    </script>
+</body>
+</html>
+

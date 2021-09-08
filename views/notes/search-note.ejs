@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <div id="main">
+        <h2>Search for the title</h2>
+        <form action="/notes/search-note" method="GET" style="margin-bottom: 10px;">
+            <input id="searchbar" name="search" type="text" placeholder="Enter the title">
+            <button type="submit" id="sbutton">
+                <img src="/mag-glass.svg" alt="">
+            </button>
+        </form>
+
+        <% if(notes.length>0) { %>
+            <% notes.forEach(note => { %>
+            <a href="/notes/<%=note._id%>">
+                <div class="note-link">
+                    <div><h2><%= note.title %></h2></div>
+                    <div><p><%= note.category %></p></div>
+                    <div><p><%= note.createdAt.toDateString() %></p></div>
+                </div>
+            </a>
+            <% }) %>
+        <% } else { %>
+            <p>There are no notes to display.</p>
+        <% } %>
+    </div>
+</body>
+</html>
